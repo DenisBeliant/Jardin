@@ -99,7 +99,6 @@
                 <div class="w3-container w3-teal w3-padding-16">
                     <div class="w3-left">
                         <!-- <a class="waves-effect waves-light btn-large"><i class="material-icons right">check_box</i>0n/Off</a> -->
-                        <i class="fa fa-toggle-off w3-xxxlarge"></i>
                     </div>
                     <div class="w3-right">
                         <h3 id="arro"></h3>
@@ -235,13 +234,13 @@
 
         socket.on('weather', function (res) {
             console.log(res);
-            if(res == 'rain') document.getElementById('weather').innerText = 'Il pleut demain';
+            if(res == 'Rain') document.getElementById('weather').innerText = 'Il pleut demain';
             else document.getElementById('weather').innerText = 'Demain il ne pleut pas';
         });
 
         socket.on('hum', function (res) {
             console.log(res);
-            document.getElementById('hum').innerText = res;
+            document.getElementById('hum').innerText = res + " %";
         });
 
         socket.on('arro', function (res) {

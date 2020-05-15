@@ -33,9 +33,9 @@ function jardinClean() {
     if (meteo) {
         // Si il pleut, pas besoin d'arroser
         console.log("Il pleut, pas besoin d'arroser");
-        client.publish("campusnum/jardin/arro", 0);
+        client.publish("campusnum/jardin/arro", '0');
     } else if (donneesCapt <= 30) {
-        client.publish("campusnum/jardin/arro", 1);
+        client.publish("campusnum/jardin/arro", '1');
         console.log(caArrose);
     }
 
