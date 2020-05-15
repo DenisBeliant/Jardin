@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="data">
+        <p id="weather"></p>
+        <p id="hum"></p>
+        <p id="arro"></p>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+
+        socket.on('weather', function (res) {
+            console.log(res);
+            document.getElementById('weather').innerText = res;
+        });
+
+        socket.on('hum', function (res) {
+            console.log(res);
+            document.getElementById('hum').innerText = res;
+        });
+
+        socket.on('arro', function (res) {
+            if(res == '1') document.getElementById('arro').innerText = "Arrosage en cours";
+            else document.getElementById('arro').innerText = "Arrosage non utile";
+        });
+    </script>
+</body>
+
+</html>

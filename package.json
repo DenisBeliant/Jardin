@@ -1,0 +1,12 @@
+{
+    "name": "jardin_connecte",
+    "version": "0.0.1",
+    "description": "Gestion du jardin automatiquement",
+    "dependencies": {
+        "axios": "^0.19.2",
+        "express": "^4.17.1",
+        "mqtt": "^4.0.1",
+        "socket.io": "^2.3.0"
+    }
+
+}
