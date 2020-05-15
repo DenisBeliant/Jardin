@@ -102,17 +102,17 @@
                         <i class="fa fa-toggle-off w3-xxxlarge"></i>
                     </div>
                     <div class="w3-right">
-                        <h3>20h</h3>
+                        <h3 id="arro"></h3>
                     </div>
                     <div class="w3-clear"></div>
-                    <h4>Dernier arrosage</h4>
+                    <h4>Arrosage</h4>
                 </div>
             </div>
             <div class="w3-quarter">
                 <div class="w3-container w3-orange w3-text-white w3-padding-16">
                     <div class="w3-left"><i class="fa fa-cloud w3-xxxlarge"></i></div>
                     <div class="w3-right">
-                        <h3>Api weather</h3>
+                        <h3 id="weather">Api weather</h3>
                     </div>
                     <div class="w3-clear"></div>
                     <h4>Prévisions Météo</h4>
@@ -235,7 +235,8 @@
 
         socket.on('weather', function (res) {
             console.log(res);
-            document.getElementById('weather').innerText = res;
+            if(res == 'rain') document.getElementById('weather').innerText = 'Il pleut demain';
+            else document.getElementById('weather').innerText = 'Demain il ne pleut pas';
         });
 
         socket.on('hum', function (res) {
